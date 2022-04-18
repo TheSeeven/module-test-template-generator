@@ -4,3 +4,5 @@ This code generates a module test template based on who is working, the date of 
 It will generate as many test branches as needed.
 
 All the tests are copied to the clipboard
+
+This software will be used by Hella
