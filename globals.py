@@ -11,9 +11,12 @@ $$$TEST_GROUP$$$
 $$$TEST_CASES$$$"""
 
 Includes = """
+/* Include area */
 #include "CppUTest/TestHarness.h"
 #include "CppUTestExt/MockSupport.h"
-#include "Rda_RmOProc_Test.h"
-#include "Rda_RmOProc_TestHelpers.h"
+
+/* TO BE FILLED */
+
+/* Include area */
 
 """
