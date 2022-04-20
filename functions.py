@@ -139,3 +139,10 @@ TEST($$$FILENAME$$$_Test, $$$FILENAME__UPERACSE$$$_$$$TEST_NO$$$)
             functionName.upper()).replace("$$$TEST_NO$$$", testName)
     result += "\n \n \n"
     return result
+
+
+def cleanValues():
+    global TEST_NAMES, CURRENT_TEST_CASE_NAME, TEST_COUNTER
+    TEST_NAMES = []
+    CURRENT_TEST_CASE_NAME = "X$$$NUMBER$$$"
+    TEST_COUNTER = 1

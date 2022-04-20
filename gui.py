@@ -1,5 +1,6 @@
 from tkinter import *
 from globals import *
+import os, sys
 
 
 def generate_result(functionName, username, numberOfTests):
@@ -20,8 +21,15 @@ class Interface:
     username = ""
     numberOfTests = -1
 
-    def copyToClipboard(self):
+    def resource_path(relative_path):
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+        return os.path.join(base_path, relative_path)
 
+    def copyToClipboard(self):
+        global TEST_NAMES, CURRENT_TEST_CASE_NAME, TEST_COUNTER
         Interface.functionName = str(self.functionName_Input.get())
         Interface.username = str(self.username_Input.get())
 
@@ -45,13 +53,15 @@ class Interface:
                 text=
                 "Fields can't be empty or \nNumber of tests must be a positive number",
                 font=("San Francisco", 13))
+        cleanValues()
 
     def __init__(self):
 
         #BASE
         #background an other customizations
         self.interface = Tk(className="module test template generator")
-        self.interface.iconbitmap('blender.ico')
+        self.interface.iconbitmap(
+            default=Interface.resource_path('blender.ico'))
         self.interface.resizable(False, False)
         self.interface['background'] = Interface.backgroundColor
         self.buttonFrame = Frame(self.interface)
